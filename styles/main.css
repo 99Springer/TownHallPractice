@@ -1,0 +1,223 @@
+/* the styles for the elements */
+html{
+	background-color: white;
+}
+/* reset selector*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	width: 98%;
+	max-width: 960px;
+	margin: 0 auto 0; 		/*top o, right auto, left auto, bottom 0*/
+	border: 3px solid #931420;
+	background-color: #fffded;
+}
+section {
+	width: 54.6875%;    		/* 525/960*100+54.6875%  */
+	float: right;
+	padding-right: 3.6459;  	/* 20/960*100=2.0833% */
+	padding-left: 3.6459%;		/* 20/960*100=2.0833% */
+}
+aside {
+	width: 22.3958%;			/* 215/960*100=22.3958% */
+	float: right;
+	padding-left: 3.6459;		/* 20/960*100=2.0833% */
+	padding-bottom: 3.6458%;	/* 20/960*100=2.0833% */
+}
+/* the styles for the header */
+header{
+	border-bottom: 3px solid #931420;
+	padding-top: 1.5em;
+	padding-bottom: 2.0em;
+	background-image: -webkit-linear-gradient(60deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+}
+header img { 
+	float: left; 
+	padding-right: 3.125%;			/* 30/960*100=3.125% */
+	padding-left: 3.125%;
+}
+header h2 { 
+	font-size: 170%;
+	color: #800000;	
+}
+header h3 {
+	font-size: 130%;
+	font-style: italic; 
+}
+.shadow {
+	text-shadow: 1.5px 1.5px 2px #800000;
+}
+/* the styles for the section */
+section {
+	clear: left;
+}
+ section h1 {
+	 font-size: 150%;
+	 padding-top: .5em;
+	 margin: 0 0;
+ }
+ section h2 {
+	 font-size: 130%;
+	 color: #800000;
+	 padding: 0;
+ }
+ section article {
+	 padding-top: .5em;
+	 padding-bottom: .5em;
+	 border-top: 2px solid #800000;
+	 border-bottom: 2px solid #800000; 
+ }
+ section img {
+	 float: right; 
+	 margin: .50em;
+	 border: 1px solid black;
+ }
+ section article img{
+	 max-width: 40%;
+	 min-width: 150px;
+ }
+ section h3 {
+	 font-size: 105%;
+	 padding-bottom: .25em;
+ }
+ 
+ section p {
+	 padding-bottom: .5em;
+ }
+ section blockquote {
+	 padding-left: 2em;
+	 padding-right: 2em;
+	 font-style: italic;
+ }
+ section ul {
+	 padding-bottom: .25em;
+	 padding-left: 1.25em;
+ }
+ li {
+	 padding-bottom: .35em;
+ }
+ ul.circle {list-style-type:circle;}
+ a:hover, a:focus {font-style: italic}
+/* the style for the aside */
+
+ aside h2 {
+		font-size: 130%;
+		color: #800000;
+		padding: .5em 0 .25em;
+ }
+
+ aside h3 {
+	 font-size: 105%;
+	 padding-bottom: .25em;
+ }
+
+ aside img {
+	 padding-bottom: 1em;
+ }
+
+/* operations for the nav menu*/
+#nav_menu ul {
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+	
+#nav_menu ul li {float: left;}
+
+#nav_menu ul ul {
+	display: none;
+	position: absolute;
+	top: 90%;
+	}
+#nav_menu ul ul li {float: none;}
+#nav_menu ul li:hover > ul {
+	display:block;}
+#nav_menu > ul::after {
+	content: ""; 			/*follow up*/
+	display:block;
+	clear:both;
+}
+
+
+/* styling for the nav menu*/
+
+#nav_menu ul li {
+	width: 20%; 		/* 192/960*100=13.3333 (width of the individual list items in the nav bar) 2-26(A)*/
+}
+#nav_menu ul li ul li {
+		text-align: center;
+		width: 100%;                  /*width of submenu set so it extends the full width of the list item 2-26(B)*/
+		padding: 1em;
+		font-size:100%;
+		text-decoration: none;
+		background-color: #800000;
+		color: white;
+		font-weight: bold;
+}
+
+#nav_menu ul li ul.lastitem li {width: 100%}  /* Formatting for the last menu item, work on this tomorrow, first! */
+
+#nav_menu ul li a {
+	text-align: center;
+	display: block;
+	width: 100%; 	/* 2-26(C) */		       
+	padding: 1em 0;
+	text-decoration: none;
+	background-color: #800000;
+	color: white;
+	font-weight: bold;
+}
+
+#nav_menu ul li a.current {color: yellow;}
+
+/* the styles for the footer */
+
+footer p {
+	text-align: center;
+	background-color: #931420;
+	color: white;
+	padding: 1em 0 1em;
+	clear: both;
+}
+/*Initially hide the mobile menu*/
+#mobile_menu {display:none;}
+
+/*media style - checks viewport width is 959px or less*/
+@media only screen and (max-width: 959px) {
+	main section h1 {font-size: 135%}
+	main section h2 {font-size: 120%}
+	main aside h2 {font-size: 120%}
+}
+/*media style - phone in landscape*/
+@media only screen and (max-width: 767px) {
+	header img {float:none;}
+	header {text-align: center;}
+	#nav_menu {display:none;}
+	#mobile_menu {display:block;}
+	.slicknav_menu {background-color: #800000 !important;};
+	section,aside {
+		float:none;
+		padding-left:25%;
+		padding-right:25%;
+	}
+	section article img{max-width: 40%;}
+	main aside div {column-count: 2;}
+	}
+@media only screen and (max-width: 479px) {
+	body{font-size: 90%;}
+	#nav_menu {display:none;}
+	#mobile_menu {display:block;}
+	.slicknav_menu {background-color: #800000;}
+	section,aside {
+		float:none;
+		padding-left:25%;
+		padding-right:25%;
+	}
+
+}
