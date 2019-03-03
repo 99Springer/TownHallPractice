@@ -214,8 +214,8 @@ footer p {
 	#nav_menu {display:none;}
 	#mobile_menu {display:block;}
 	.slicknav_menu {background-color: #800000;}
-	section,aside {
-		float:none;
+	section,aside, image {
+		float:left;
 		padding-left:25%;
 		padding-right:25%;
 	}
